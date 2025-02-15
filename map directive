@@ -1,0 +1,82 @@
+# /etc/nginx/nginx.conf
+
+# The following is the http block
+# Your http block may differ, do not copy this
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+    client_max_body_size 100M;
+
+    include /etc/nginx/conf.d/*.conf;
+
+
+# This is what you need to add
+# Define a map to check the User-Agent header for known AI bots.
+map $http_user_agent $block_ai_bot {
+	default 0;
+
+# List of AI bot patterns (case-insensitive match)
+	~*AnthropicAI	1;
+	~*OpenAI		1;
+	~*Sogou			1;
+	~*AhrefsBot		1;
+	~*SemrushBot	1;
+	~*ia_archiver	1;
+	~*AI2Bot		1;
+	~*Ai2Bot-Dolma	1;
+	~*Amazonbot		1;
+	~*anthropic-ai	1;
+	~*Applebot		1;
+	~*Applebot-Extended 1;
+	~*Bytespider	1;
+	~*CCBot		1;
+	~*ChatGPT-User	1;
+	~*Claude-Web 1;
+	~*ClaudeBot 1;
+	~*cohere-ai 1;
+	~*cohere-training-data-crawler 1;
+	~*Crawlspace 1;
+	~*Diffbot 1;
+	~*DuckAssistBot 1;
+	~*FacebookBot 1;
+	~*FriendlyCrawler 1;
+	~*Google-Extended 1;
+	~*GoogleOther 1;
+	~*GoogleOther-Image 1;
+	~*GoogleOther-Video 1;
+	~*GPTBot 1;
+	~*iaskspider/2.0 1;
+	~*ICC-Crawler 1;
+	~*ImagesiftBot 1;
+	~*img2dataset 1;
+	~*ISSCyberRiskCrawler 1;
+	~*Kangaroo\sBot 1;
+	~*Meta-ExternalAgent 1;
+	~*Meta-ExternalFetcher 1;
+	~*OAI-SearchBot 1;
+	~*omgili 1;
+	~*omgilibot 1;
+	~*PanguBot 1;
+	~*PerplexityBot 1;
+	~*PetalBot 1;
+	~*Scrapy 1;
+	~*SemrushBot-OCOB 1;
+	~*SemrushBot-SWA 1;
+	~*Sidetrade\sindexer\sbot 1;
+	~*Timpibot 1;
+	~*VelenPublicWebCrawler	1;
+	~*Webzio-Extended	1;
+	~*YouBot		1;
+}
+
+}
