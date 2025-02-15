@@ -29,3 +29,24 @@ Depending on your configuration, but most likely than not you should have a <cod
 So, <code>/etc/nginx/nginx.conf/</code> is the file you should edit to add the map directive.
 
 You can find an example in the *mad directive* file of this repository, where you'll have the same list of AI bots also declared in the robots.txt. Please note, there's no need for the two lists to be the same (robots.txt and Ngnix do not really talk to each other), but I guess the whole point is to cover as mamy known AI bots as possible.
+
+A couple of considerations for the map directive.
+
+**First**, in the following snippet from the code, the <code>$block_ai_bot</code> variable name can be (almost) anything, so you can name it $naughty_agents if you wish. The only thing is you obviously make sure to call that same variable name in the <code>if</code> conditiond
+
+**Second**, spaces in bots names should be escaped -- either with <code>\s</code> (as in the map directive example provided) or by enclosing them in <code>"</code> quotes.
+
+<code>
+map $http_user_agent $block_ai_bot {
+	default 0;
+</code>
+
+<code>
+(...)
+~*SemrushBot-SWA 1;
+~*Sidetrade\sindexer\sbot 1;
+(...)
+</code>
+
+Bots names are matched no matter the case, this is what <code>~*</code> is doing. Should you want for a name to be case sensitive, change it to <code>~BotName</code>.
+
