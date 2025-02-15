@@ -5,10 +5,21 @@ server {
 # you most likely have other stuff here
 (...)
 
+# Block HTTP/1.0 requests (most bots might use HTTP/1.0 or lower)
+        if ($server_protocol = "HTTP/1.0") {
+            return 444;
+        }
+
+        # Block non-browser requests by checking the Sec-Fetch-Mode header.
+        # Only allow values: "cors", "no-cors", or "navigate"
+        if ($http_sec_fetch_mode !~ "^(cors|no-cors|navigate)$") {
+            return 444;
+        }
+
   # this is your if declaration
   # Block requests from flagged AI bots
   if ($block_ai_bot) {
-  	return 403;
+  	return 444;
   }
 
 }
