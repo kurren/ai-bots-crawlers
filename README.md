@@ -38,7 +38,9 @@ A couple of considerations for the map directive.
 
 <code>map $http_user_agent $block_ai_bot {
 	default 0;</code>
+
 (...)
+
 <code>~*SemrushBot-SWA 1;
 ~*Sidetrade\sindexer\sbot 1;</code>
 
