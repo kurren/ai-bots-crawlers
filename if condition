@@ -1,0 +1,17 @@
+server {
+    server_name your-domain.com www.your-domain.com;
+    root /var/www/your-domain.com;
+
+# you most likely have other stuff here
+(...)
+
+  # this is your if declaration
+  # Block requests from flagged AI bots
+  if ($block_ai_bot) {
+  	return 403;
+  }
+
+}
+
+# you most likely have somethin here too
+(...)
