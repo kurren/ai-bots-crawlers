@@ -83,4 +83,4 @@ Content-Length: 153
 Connection: keep-alive</code>
 
 ### A Warning note
-I'm not a computer scientist, neither a sys admin, nor a front/back end developer -- I'm sure there are better way to achieve the same thing, the solution presented here works for me; use it at your own risk.
+I'm not a computer scientist, neither a sys admin, nor a front/back end developer -- I'm sure there are better ways to achieve the same thing, the solution presented here works for me; use it at your own risk.
