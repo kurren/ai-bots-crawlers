@@ -73,3 +73,11 @@ To double check for the solution to work, you may test it from your terminal wit
 
 as an example: <code>curl -A "GPTBot" -I https://yourdomain.com</code>
 
+If everything works as it should, you should get something like:
+
+<code>HTTP/1.1 403 Forbidden
+Server: nginx/1.23.1
+Date: Mon, 10 Feb 2025 10:04:42 GMT
+Content-Type: text/html
+Content-Length: 153
+Connection: keep-alive</code>
