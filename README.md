@@ -49,10 +49,15 @@ Bots names are matched no matter the case, this is what <code>~*BotName</code> i
 ### If condition
 This is the actual implementation, that is this where you specify how the server should respond should it get one of the AI bots listed in the _map directive_ as a http header response.
 
-Now the following bit, should be placed in the **server block** of aeach domain you want AI bots to be blocked. 
+Now the following bit, should be placed in the **server block** of each domain you want AI bots to be blocked. 
 
 <code>server { if ($block_ai_bot) {
   	return 403;
   }
 }</code>
+
+You can see it better in the **if condition** file in this repository.
+In the example here, the action is to return a code 403. You may want to return a different code, or do something else (redirect, maybe?) -- your call.
+
+Also, in case you are using a static site generator, or CMS, you may need to move the if condition within the <code>location</code> block (that should also be already within the <code>server</code> block.
 
