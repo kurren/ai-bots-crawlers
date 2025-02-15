@@ -64,7 +64,7 @@ Also, in case you are using a static site generator, or CMS, you may need to mov
 #### UPDATED
 Thanks to user _LinuxBender_ on Hacker news, I've update the **if condition** with two more conditions:
 
-- <code>if ($server_protocol = HTTP/1.0) { return 444; }</code> # blocking http 1.0 connections
+- <code>if ($server_protocol !="HTTP/2.0") { return 444; }</code> # blocking anything not http 2.0 connections
 - <code>if ($http_sec_fetch_mode !~ "^(cors|no-cors|navigate)$") {
             return 444;
         }</code> # blocking non-browser requests
