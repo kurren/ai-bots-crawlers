@@ -36,19 +36,14 @@ A couple of considerations for the map directive.
 
 **Second**, spaces in bots names should be escaped -- either with <code>\s</code> (as in the map directive example provided) or by enclosing them in <code>"</code> quotes.
 
-<code>
-map $http_user_agent $block_ai_bot {
-	default 0;
-</code>
+<code>map $http_user_agent $block_ai_bot {
+	default 0;</code>
 
-and
-
-<code>
 (...)
+
+<code>
 ~*SemrushBot-SWA 1;
-~*Sidetrade\sindexer\sbot 1;
-(...)
-</code>
+~*Sidetrade\sindexer\sbot 1;</code>
 
 Bots names are matched no matter the case, this is what <code>~*</code> is doing. Should you want for a name to be case sensitive, change it to <code>~BotName</code>.
 
