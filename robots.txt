@@ -1,6 +1,13 @@
+# The following two lines are saying: all user agents are allowed to crawl all of the site
+# Another way of saying the same thing could be:
+# User-agent: *
+# Allow: /
+# You don't really need any of these, if you don't put anything the implicit message is the same: allow all crwalers to the full site
 User-agent: *
 Disallow:
 
+# The following lines are listing all known (to the date of this file) AI crawlers
+# The last line is saying: all of the above bots are not allowed to crawl any part of the site
 User-agent: AnthropicAI
 User-agent: OpenAI
 User-agent: Sogou
