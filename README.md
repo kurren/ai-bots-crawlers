@@ -61,6 +61,18 @@ In the example here, the action is to return a code 403. You may want to return 
 
 Also, in case you are using a static site generator, or CMS, you may need to move the if condition within the <code>location</code> block (that should also be already within the <code>server</code> block.
 
+#### UPDATED
+Thanks to user _LinuxBender_ on Hacker news, I've update the **if condition** with two more conditions:
+
+- <code>if ($server_protocol = HTTP/1.0) { return 444; }</code> # blocking http 1.0 connections
+- <code>if ($http_sec_fetch_mode !~ "^(cors|no-cors|navigate)$") {
+            return 444;
+        }</code> # blocking non-browser requests
+
+also, all reponse codes have been switched to a less friendly **444**
+
+Find the comment on HN here: https://news.ycombinator.com/item?id=43058831#43059547
+
 ## Check syntax and reload
 Depending on your Nginx version and/or server operating system, the following commands may not the ones that would do it for you, but before celebrating you should:
 
