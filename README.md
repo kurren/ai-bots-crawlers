@@ -23,3 +23,9 @@ Configuring your Ngnix web server to block AI bots requires you to work on two d
 - an **if condition** that will implement a specific action if one of the AI bot declared in the map directive is found
 
 ### Map directive
+This should be placed into the <code>http block</code> so it applies to all server blocks, this mean it will apply to all domains you may have (provided in each of their conf you add the if condition with the server block).
+
+Depending on your configuration, but most likely than not you should have a <code>nginx.conf</code> file in <code>/etc/nginx/</code> om your server.
+So, <code>/etc/nginx/nginx.conf/</code> is the file you should edit to add the map directive.
+
+You can find an example in the *mad directive* file of this repository, where you'll have the same list of AI bots also declared in the robots.txt. Please note, there's no need for the two lists to be the same (robots.txt and Ngnix do not really talk to each other), but I guess the whole point is to cover as mamy known AI bots as possible.
