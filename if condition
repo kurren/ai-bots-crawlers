@@ -5,8 +5,8 @@ server {
 # you most likely have other stuff here
 (...)
 
-# Block HTTP/1.0 requests (most bots might use HTTP/1.0 or lower)
-        if ($server_protocol = "HTTP/1.0") {
+# Block non HTTP/2.0 requests (most bots might use HTTP/1.0 or lower)
+        if ($server_protocol != "HTTP/2.0") {
             return 444;
         }
 
