@@ -16,3 +16,10 @@ Use a ftp/sftp tool or command according to your local and server setup.
 
 More info on robots.txt could be found on **Google Search Central**: https://developers.google.com/search/docs/crawling-indexing/robots/intro
 
+## Ngnix Configuraiton
+Configuring your Ngnix web server to block AI bots requires you to work on two different bits:
+
+- a **map directive** to read http header for know AI bots
+- an **if condition** that will implement a specific action if one of the AI bot declared in the map directive is found
+
+### Map directive
