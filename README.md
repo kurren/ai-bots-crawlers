@@ -41,6 +41,8 @@ map $http_user_agent $block_ai_bot {
 	default 0;
 </code>
 
+and
+
 <code>
 (...)
 ~*SemrushBot-SWA 1;
