@@ -76,7 +76,7 @@ as an example: <code>curl -A "GPTBot" -I https://yourdomain.com</code>
 If everything works as it should, you should get something like:
 
 <code>HTTP/1.1 403 Forbidden
-Server: nginx/1.23.1
+Server: nginx/1.27.4
 Date: Mon, 10 Feb 2025 10:04:42 GMT
 Content-Type: text/html
 Content-Length: 153
