@@ -53,5 +53,6 @@ Now the following bit, should be placed in the **server block** of aeach domain 
 
 <code>server { if ($block_ai_bot) {
   	return 403;
-  }</code>
+  }
+}</code>
 
