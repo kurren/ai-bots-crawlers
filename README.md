@@ -46,3 +46,6 @@ A couple of considerations for the map directive.
 
 Bots names are matched no matter the case, this is what <code>~*BotName</code> is doing. Should you want for a name to be case sensitive, change it to <code>~BotName</code>.
 
+### If condition
+This is the actual implementation, that is this where you specify how the server should respond should it get one of the AI bots listed in the _map directive_ as a http header response.
+
