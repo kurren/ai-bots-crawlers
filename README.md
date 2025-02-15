@@ -61,3 +61,15 @@ In the example here, the action is to return a code 403. You may want to return 
 
 Also, in case you are using a static site generator, or CMS, you may need to move the if condition within the <code>location</code> block (that should also be already within the <code>server</code> block.
 
+## Check syntax and reload
+Depending on your Nginx version and/or server operating system, the following commands may not the ones that would do it for you, but before celebrating you should:
+
+- check for Nginx configruation correctness with <code>sudo nginx -t</code>
+- reload Nginx with <code>sudo systemctl reload nginx</code>
+
+To double check for the solution to work, you may test it from your terminal with:
+
+<code>curl -A "AI bot name" -I https://yourdomain.com</code>
+
+as an example: <code>curl -A "GPTBot" -I https://yourdomain.com</code>
+
