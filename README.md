@@ -1,5 +1,5 @@
 # Block AI bots crawlers
-Prevent ai bots to crawl a website (Ngnix web server).
+Prevent ai bots to crawl a website (Nginx web server).
 
 If you are looking for a solution to prevent AI bots to crawl your website, this approach is combining a robots.txt file and a web server directive.
 
