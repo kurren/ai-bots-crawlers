@@ -87,12 +87,7 @@ as an example: <code>curl -A "GPTBot" -I https://yourdomain.com</code>
 
 If everything works as it should, you should get something like:
 
-<code>HTTP/1.1 403 Forbidden
-Server: nginx/1.27.4
-Date: Mon, 10 Feb 2025 10:04:42 GMT
-Content-Type: text/html
-Content-Length: 153
-Connection: keep-alive</code>
+<code>curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)</code>
 
 ### A Warning note
 I'm not a computer scientist, neither a sys admin, nor a front/back end developer -- I'm sure there are better ways to achieve the same thing, the solution presented here works for me; use it at your own risk.
